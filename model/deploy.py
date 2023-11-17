@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import tensorflow
+#import tensorflow
 from tensorflow import keras 
 import streamlit as st
 
@@ -89,6 +89,8 @@ class MovieRecommender:
             st.dataframe(styled_recommendations)
 
 if __name__ == "__main__":
+    print("Execution started")
     base_path = '..'  # Replace this with your base path
     movie_recommender = MovieRecommender(base_path)
     movie_recommender.display_recommendations()
+    print("Execution ended")
