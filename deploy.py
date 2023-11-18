@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import tensorflow
-import seaborn as sns
+#import seaborn as sns
 from tensorflow import keras 
 import streamlit as st
 
@@ -14,13 +14,13 @@ class MovieRecommender:
         """
         Loading all the required csv
         """
-        self.ratings = pd.read_csv(self.base_path + '//data//ratings.csv', sep='\t', encoding='latin-1', 
+        self.ratings = pd.read_csv('ratings.csv', sep='\t', encoding='latin-1', 
                                    usecols=['user_id', 'movie_id', 'user_emb_id', 'movie_emb_id', 'rating'])
-        self.users = pd.read_csv(self.base_path + '/data/users.csv', sep='\t', encoding='latin-1', 
+        self.users = pd.read_csv('users.csv', sep='\t', encoding='latin-1', 
                                  usecols=['user_id', 'gender', 'zipcode', 'age_desc', 'occ_desc'])
-        self.movies = pd.read_csv(self.base_path + '/data/movies.csv', sep='\t', encoding='latin-1', 
+        self.movies = pd.read_csv('movies.csv', sep='\t', encoding='latin-1', 
                                   usecols=['movie_id', 'title', 'genres'])
-        self.new_model = keras.models.load_model(self.base_path + '//data//newmodel.h5')
+        self.new_model = keras.models.load_model('newmodel.h5')
 
     def predict_rating(self, user_id, movie_id):
         """
