@@ -3,6 +3,7 @@ import numpy as np
 import tensorflow
 #import seaborn as sns
 from tensorflow import keras 
+import matplotlib
 import streamlit as st
 
 class MovieRecommender:
