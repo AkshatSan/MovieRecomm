@@ -1,1 +1,2 @@
-tensorflow
+tensorflow==2.14.0
+streamlit==1.28.2
