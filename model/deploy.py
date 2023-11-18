@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 #import tensorflow
-import seaborn as sns
+
 from tensorflow import keras 
 import streamlit as st
 

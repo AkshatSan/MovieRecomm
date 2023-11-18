@@ -1,1 +1,1 @@
-seaborn
+tensorflow==2.14.0
