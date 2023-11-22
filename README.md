@@ -3,7 +3,7 @@
 The Movie Recommender System utilizes collaborative filtering to recommend movies to users based on their preferences. This system is developed using Python, leveraging Pandas, NumPy, TensorFlow, and Streamlit libraries for data processing, modeling, and user interface. This is the link of the app https://movienights.streamlit.app/
 
 ## Table of Contents
-
+- [Overview](#Overview)
 - [File Structure](#file-structure)
 - [Usage](#usage)
   - [Installation](#installation)
@@ -12,6 +12,23 @@ The Movie Recommender System utilizes collaborative filtering to recommend movie
   - [Methods](#methods)
 - [Streamlit App](#streamlit-app)
 - [Usage Notes](#usage-notes)
+
+
+## Overview
+The Movie Recommender System employs an embeddings-based approach coupled with matrix factorization to derive latent factors and predict user ratings for movies. This technique involves reducing dimensionality and creating vectors that encapsulate user and movie features.
+
+### Key Concepts
+
+- **Embeddings:** Embeddings are low-dimensional representations of high-dimensional data. In this context, they represent users and movies as vectors in a reduced space.
+  
+- **Matrix Factorization:** Matrix factorization is a method that decomposes a matrix into multiple matrices, which aids in identifying latent factors or hidden patterns within the data.
+  
+- **Latent Factors:** Latent factors are abstract and hidden features derived from the matrix factorization process. These factors could represent various characteristics like genre preferences, time impacts, influential actors, or other underlying features that affect user movie preferences.
+
+### Idea
+
+The primary concept revolves around predicting user reactions to movies based on similar user reactions. By creating embeddings for users and movies, we reduce the dimensionality and generate vectors that are used in deep learning algorithms. Matrix factorization assists in splitting the ratings matrix into two parts, revealing latent factors that aid in predicting new ratings. These latent factors offer insights into various movie features that influence user preferences, even those that might not be explicitly understood.
+
 
 ## File Structure
 
@@ -25,8 +42,7 @@ The Movie Recommender System utilizes collaborative filtering to recommend movie
 
 1. Clone this repository:
     ```bash
-    git clone https://github.com/your_username/movie-recommender.git
-    cd movie-recommender
+    https://github.com/AkshatSan/MovieRecomm.git
     ```
 
 2. Install dependencies:
@@ -45,6 +61,9 @@ The Movie Recommender System utilizes collaborative filtering to recommend movie
     ```
 
 3. Access the Streamlit app in your web browser.
+    ```bash
+    https://movienights.streamlit.app/
+    ```
 
 ## MovieRecommender Class
 
