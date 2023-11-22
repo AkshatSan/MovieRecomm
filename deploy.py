@@ -17,11 +17,11 @@ class MovieRecommender:
         """
         self.ratings = pd.read_csv('data/ratings.csv', sep='\t', encoding='latin-1', 
                                    usecols=['user_id', 'movie_id', 'user_emb_id', 'movie_emb_id', 'rating'])
-        self.users = pd.read_csv('users.csv', sep='\t', encoding='latin-1', 
+        self.users = pd.read_csv('data/users.csv', sep='\t', encoding='latin-1', 
                                  usecols=['user_id', 'gender', 'zipcode', 'age_desc', 'occ_desc'])
-        self.movies = pd.read_csv('movies.csv', sep='\t', encoding='latin-1', 
+        self.movies = pd.read_csv('data/movies.csv', sep='\t', encoding='latin-1', 
                                   usecols=['movie_id', 'title', 'genres'])
-        self.new_model = keras.models.load_model('newmodel.h5')
+        self.new_model = keras.models.load_model('data/newmodel.h5')
 
     def predict_rating(self, user_id, movie_id):
         """
