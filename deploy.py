@@ -15,7 +15,7 @@ class MovieRecommender:
         """
         Loading all the required csv
         """
-        self.ratings = pd.read_csv('rattings.csv', sep='\t', encoding='latin-1', 
+        self.ratings = pd.read_csv('data/ratings.csv', sep='\t', encoding='latin-1', 
                                    usecols=['user_id', 'movie_id', 'user_emb_id', 'movie_emb_id', 'rating'])
         self.users = pd.read_csv('users.csv', sep='\t', encoding='latin-1', 
                                  usecols=['user_id', 'gender', 'zipcode', 'age_desc', 'occ_desc'])
