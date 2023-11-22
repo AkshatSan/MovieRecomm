@@ -1,6 +1,6 @@
 # Movie Recommender System
 
-The Movie Recommender System utilizes collaborative filtering to recommend movies to users based on their preferences. This system is developed using Python, leveraging Pandas, NumPy, TensorFlow, and Streamlit libraries for data processing, modeling, and user interface. This is the link of the app https://movienights.streamlit.app/
+The Movie Recommender System utilizes collaborative filtering to recommend movies to users based on their preferences. This system is developed with an approach of matrix factorization using tensorflow. This is the link of the app https://movienights.streamlit.app/
 
 ## Table of Contents
 - [Overview](#Overview)
@@ -27,7 +27,9 @@ The Movie Recommender System employs an embeddings-based approach coupled with m
 
 ### Idea
 
-The primary concept revolves around predicting user reactions to movies based on similar user reactions. By creating embeddings for users and movies, we reduce the dimensionality and generate vectors that are used in deep learning algorithms. Matrix factorization assists in splitting the ratings matrix into two parts, revealing latent factors that aid in predicting new ratings. These latent factors offer insights into various movie features that influence user preferences, even those that might not be explicitly understood.
+The primary concept revolves around predicting user reactions to movies based on similar user reactions. By creating embeddings for users and movies, we reduce the dimensionality and generate vectors that are used in deep learning algorithms. Matrix factorization is done by splitting the user movie matrix of ratings into user and movie matrix. The dimension in which it is broken is known as letent dimension.
+- **For Example:** Let us suppose we have a matrix of m*n . It gets broken into m*d and d*n matrixes.
+
 
 
 ## File Structure
