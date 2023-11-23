@@ -7,7 +7,7 @@ import matplotlib
 import streamlit as st
 
 class MovieRecommender:
-     """
+    """
     A class for movie recommendation using collaborative filtering.
 
     Attributes:
@@ -18,12 +18,13 @@ class MovieRecommender:
     - new_model (keras.Model): Keras model for movie rating prediction.
 
     Methods:
-    - __init__(base_path): Initializes the MovieRecommender object.
-    - load_data(): Loads required CSV files.
-    - predict_rating(user_id, movie_id): Predicts the rating for a given user and movie.
-    - recommend(TEST_USER): Provides movie recommendations for a user.
-    - display_recommendations(): Displays movie recommendations in the Streamlit app.
+    - load_data: Load required CSV files.
+    - predict_rating: Predict the rating for a given user and movie.
+    - recommend: Provide movie recommendations for a user.
+    - display_recommendations: Display movie recommendations in the Streamlit app.
+
     """
+    
     def __init__(self, base_path):
         """
         Initialize the MovieRecommender object.
