@@ -7,7 +7,30 @@ import matplotlib
 import streamlit as st
 
 class MovieRecommender:
+     """
+    A class for movie recommendation using collaborative filtering.
+
+    Attributes:
+    - base_path (str): Base path to the data directory.
+    - ratings (DataFrame): DataFrame containing user ratings.
+    - users (DataFrame): DataFrame containing user details.
+    - movies (DataFrame): DataFrame containing movie details.
+    - new_model (keras.Model): Keras model for movie rating prediction.
+
+    Methods:
+    - __init__(base_path): Initializes the MovieRecommender object.
+    - load_data(): Loads required CSV files.
+    - predict_rating(user_id, movie_id): Predicts the rating for a given user and movie.
+    - recommend(TEST_USER): Provides movie recommendations for a user.
+    - display_recommendations(): Displays movie recommendations in the Streamlit app.
+    """
     def __init__(self, base_path):
+        """
+        Initialize the MovieRecommender object.
+
+        Args:
+        - base_path (str): Base path to the data directory.
+        """
         self.base_path = base_path
         self.load_data()
 
@@ -25,20 +48,27 @@ class MovieRecommender:
 
     def predict_rating(self, user_id, movie_id):
         """
-        user_id:- the user id that needs the recommendation
-        movie_id:- The movie_id which will be rated
+        Predict the rating for a given user and movie.
 
-        The function accepts the user_id and movie_id and predicts the rating.
-        
+        Args:
+        - user_id (int): User ID for prediction.
+        - movie_id (int): Movie ID for prediction.
+
+        Returns:
+        - float: Predicted rating for the user-movie pair.
         """
         return self.new_model.predict([np.array([user_id]), np.array([movie_id])], verbose=0)[0][0]
 
     def recommend(self, TEST_USER):
 
         """
-        TEST_USER:- the user_id for reccommendation
+        Provide movie recommendations for a user.
 
-        The function accepts the user_id and gives the top 20 recommendation to the user
+        Args:
+        - TEST_USER (int): User ID for recommendation.
+
+        Returns:
+        - DataFrame: DataFrame containing top 10 movie recommendations for the user.
         """
         user_ratings = self.ratings[self.ratings['user_id'] == TEST_USER][['user_id', 'movie_id', 'rating']]
         recommendations = self.ratings[self.ratings['movie_id'].isin(user_ratings['movie_id']) == False][['movie_id']].drop_duplicates()
